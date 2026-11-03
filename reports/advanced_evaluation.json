@@ -1,0 +1,107 @@
+{
+  "audit": {
+    "raw_rows": 736,
+    "conflict_texts": 2,
+    "conflict_rows": 4,
+    "rows_after_conflict_removal": 732,
+    "clean_rows": 643
+  },
+  "train_rows": 515,
+  "test_rows": 128,
+  "binary_threshold": 0.32,
+  "synthetic_legitimate_holdout": {
+    "n": 40,
+    "false_alarms": 0,
+    "false_alarm_rate": 0.0,
+    "warning": "Synthetic stress test only; not a representative real-world estimate."
+  },
+  "binary_test": {
+    "classification_report": {
+      "0": {
+        "precision": 0.9512195121951219,
+        "recall": 0.7358490566037735,
+        "f1-score": 0.8297872340425532,
+        "support": 53.0
+      },
+      "1": {
+        "precision": 0.8390804597701149,
+        "recall": 0.9733333333333334,
+        "f1-score": 0.9012345679012346,
+        "support": 75.0
+      },
+      "accuracy": 0.875,
+      "macro avg": {
+        "precision": 0.8951499859826184,
+        "recall": 0.8545911949685534,
+        "f1-score": 0.8655109009718939,
+        "support": 128.0
+      },
+      "weighted avg": {
+        "precision": 0.8855130361648444,
+        "recall": 0.875,
+        "f1-score": 0.8716509062253743,
+        "support": 128.0
+      }
+    },
+    "roc_auc": 0.940125786163522
+  },
+  "multiclass_risk_test": {
+    "classification_report": {
+      "safe": {
+        "precision": 0.8867924528301887,
+        "recall": 0.8867924528301887,
+        "f1-score": 0.8867924528301887,
+        "support": 53.0
+      },
+      "suspicious_moderate_scam": {
+        "precision": 0.8666666666666667,
+        "recall": 0.8125,
+        "f1-score": 0.8387096774193549,
+        "support": 16.0
+      },
+      "high_risk_scam": {
+        "precision": 0.8833333333333333,
+        "recall": 0.8983050847457628,
+        "f1-score": 0.8907563025210085,
+        "support": 59.0
+      },
+      "accuracy": 0.8828125,
+      "macro avg": {
+        "precision": 0.8789308176100629,
+        "recall": 0.8658658458586505,
+        "f1-score": 0.8720861442568507,
+        "support": 128.0
+      },
+      "weighted avg": {
+        "precision": 0.8826822916666667,
+        "recall": 0.8828125,
+        "f1-score": 0.8826091928706967,
+        "support": 128.0
+      }
+    },
+    "macro_f1": 0.8720861442568507,
+    "confusion_matrix": [
+      [
+        47,
+        0,
+        6
+      ],
+      [
+        2,
+        13,
+        1
+      ],
+      [
+        4,
+        2,
+        53
+      ]
+    ]
+  },
+  "risk_policy": {
+    "safe_below": 0.208,
+    "suspicious_from": 0.208,
+    "high_risk_from": 0.32,
+    "note": "Raw Logistic Regression score; not calibrated probability. Severity tier is a second model."
+  }
+}

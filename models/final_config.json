@@ -1,0 +1,14 @@
+{
+ "model": "lr",
+ "ngram": [
+  1,
+  1
+ ],
+ "hand": true,
+ "params": {
+  "C": 16.0,
+  "class_weight": "balanced"
+ },
+ "threshold": 0.3203301862375496,
+ "name": "Logistic Regression"
+}

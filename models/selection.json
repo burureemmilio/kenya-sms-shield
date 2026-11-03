@@ -1,0 +1,47 @@
+{
+ "selected_model": "lr",
+ "selection_rule": "nested-CV ROC-AUC; ties within 1 SE -> LR > SVM > NB",
+ "target_recall": 0.95,
+ "thresholds": {
+  "nb": 0.3147364247731963,
+  "lr": 0.3203301862375496,
+  "svm": -0.2217970642456849
+ },
+ "configs": {
+  "nb": {
+   "model": "nb",
+   "ngram": [
+    1,
+    1
+   ],
+   "hand": true,
+   "params": {
+    "alpha": 0.1
+   }
+  },
+  "lr": {
+   "model": "lr",
+   "ngram": [
+    1,
+    1
+   ],
+   "hand": true,
+   "params": {
+    "C": 16.0,
+    "class_weight": "balanced"
+   }
+  },
+  "svm": {
+   "model": "svm",
+   "ngram": [
+    1,
+    1
+   ],
+   "hand": true,
+   "params": {
+    "C": 1.0,
+    "class_weight": "balanced"
+   }
+  }
+ }
+}

@@ -1,0 +1,16 @@
+threshold,n_groups,model,f1,roc_auc
+0.6,442,Naive Bayes,0.847,0.911
+0.6,442,Logistic Regression,0.895,0.953
+0.6,442,Linear SVM,0.897,0.954
+0.7,461,Naive Bayes,0.865,0.928
+0.7,461,Logistic Regression,0.911,0.958
+0.7,461,Linear SVM,0.912,0.958
+0.8,480,Naive Bayes,0.865,0.93
+0.8,480,Logistic Regression,0.906,0.956
+0.8,480,Linear SVM,0.907,0.956
+0.9,490,Naive Bayes,0.866,0.93
+0.9,490,Logistic Regression,0.91,0.957
+0.9,490,Linear SVM,0.909,0.957
+0.95,496,Naive Bayes,0.861,0.929
+0.95,496,Logistic Regression,0.906,0.957
+0.95,496,Linear SVM,0.907,0.958

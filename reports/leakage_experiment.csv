@@ -1,0 +1,13 @@
+model,protocol,accuracy,recall,precision,f1,roc_auc
+Naive Bayes,"P1 naive (raw, random)",0.854,0.916,0.846,0.879,0.946
+Naive Bayes,P2 exact-dedup groups (raw),0.845,0.92,0.833,0.873,0.939
+Naive Bayes,"P3 deduped, random folds",0.836,0.906,0.831,0.866,0.929
+Naive Bayes,P4 deduped + near-dup groups,0.836,0.906,0.83,0.866,0.93
+Logistic Regression,"P1 naive (raw, random)",0.912,0.915,0.931,0.923,0.968
+Logistic Regression,P2 exact-dedup groups (raw),0.902,0.913,0.92,0.915,0.964
+Logistic Regression,"P3 deduped, random folds",0.895,0.9,0.92,0.909,0.957
+Logistic Regression,P4 deduped + near-dup groups,0.894,0.9,0.918,0.908,0.957
+Linear SVM,"P1 naive (raw, random)",0.913,0.921,0.929,0.924,0.968
+Linear SVM,P2 exact-dedup groups (raw),0.905,0.919,0.92,0.918,0.965
+Linear SVM,"P3 deduped, random folds",0.897,0.905,0.919,0.911,0.958
+Linear SVM,P4 deduped + near-dup groups,0.894,0.904,0.915,0.908,0.957

@@ -1,0 +1,31 @@
+message_content,label,scam_type,source_status
+"Niaje, nimefika home salama. Tutaonana kesho.",safe,personal_text,synthetic
+"Uko wapi? Niko stage ya matatu, nipigie ukifika.",safe,personal_text,synthetic
+"Asante kwa lunch leo. Nitakutumia notes jioni.",safe,personal_text,synthetic
+"Your one-time verification code is 482913. Do not share it with anyone.",safe,otp_notice,synthetic
+"Safaricom: You have successfully subscribed to the daily data bundle.",safe,telco_notice,synthetic
+"Dear customer, your monthly statement is ready in the official banking app.",safe,bank_notice,synthetic
+"Confirmed. Ksh 1,250.00 sent to JANE DOE 0712345678. M-Pesa balance Ksh 2,400.00. Transaction cost Ksh 15.00.",safe,mpesa_receipt,synthetic
+"QW12ER34 Confirmed. You have received Ksh 800.00 from JOHN DOE. New M-Pesa balance is Ksh 3,200.00.",safe,mpesa_receipt,synthetic
+"Your bank card purchase of KES 1,450 at a supermarket was approved. If unrecognised, call the number on your card.",safe,bank_alert,synthetic
+"Reminder: your electricity token purchase was successful. Token details are in your official account.",safe,utility_notice,synthetic
+"Habari, tafadhali fika mapema kesho kwa meeting ya group.",safe,personal_text,synthetic
+"Umefika? Niko kwa gate.",safe,personal_text,synthetic
+"Your mobile data bundle expires tomorrow. Renew through the official app if needed.",safe,telco_notice,synthetic
+"Your account login code is 193044. We will never ask you to read this code to an agent.",safe,otp_notice,synthetic
+"Payment received. KES 500.00 credited to your merchant account. Reference 7KLM92PQ.",safe,merchant_alert,synthetic
+"CONGRATULATIONS! You have won Ksh 200,000. Pay Ksh 700 processing fee to unlock your prize.",high_risk_scam,prize_scam,synthetic
+"Your M-Pesa account is blocked. Send your PIN and OTP to our agent immediately to restore access.",high_risk_scam,mpesa_impersonation,synthetic
+"KCB SECURITY: verify your account at http://kcb-verify-login.xyz or your account will be suspended.",high_risk_scam,bank_phishing,synthetic
+"Your money was sent to the wrong number. Send Ksh 2,000 back now to reverse the transaction.",high_risk_scam,reversal_scam,synthetic
+"Earn Ksh 8,000 daily from home. Register with Ksh 350 and send your ID to this WhatsApp number.",high_risk_scam,fake_job,synthetic
+"Safaricom customer care here. Read me the OTP you just received so I can secure your line.",high_risk_scam,impersonation,synthetic
+"Click http://claim-prize.top and enter your bank password to receive your grant.",high_risk_scam,phishing,synthetic
+"Your Fuliza limit will be increased today. Pay a release fee to this personal number.",high_risk_scam,fake_fuliza,synthetic
+"Your account will be arrested unless you pay the penalty immediately using this paybill.",high_risk_scam,threat_payment,synthetic
+"Habari, nimetuma pesa kimakosa. Tafadhali nirudishie kwa hii namba, usipige customer care.",suspicious,reversal_request,synthetic
+"Your parcel is waiting. Pay a small delivery fee using this link to reschedule.",suspicious,delivery_phishing,synthetic
+"Please confirm your details to continue receiving mobile services. Use the link below.",suspicious,credential_harvest,synthetic
+"You have been shortlisted for an online job. Contact recruiter on Telegram for registration.",suspicious,fake_job,synthetic
+"Safaricom: Your line may be deactivated. Visit a shop or contact support using official channels.",suspicious,telco_notice,synthetic
+"Your bank account had an unusual login. Open the official app directly to review activity.",suspicious,bank_alert,synthetic

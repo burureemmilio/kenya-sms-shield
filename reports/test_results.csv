@@ -1,0 +1,7 @@
+model,threshold_rule,threshold,accuracy,recall,precision,f1,roc_auc,tp,fp,fn,tn
+Naive Bayes,default,0.5,0.844,0.92,0.831,0.873,0.907,69,14,6,39
+Naive Bayes,selected,0.315,0.836,0.96,0.8,0.873,0.907,72,18,3,35
+Logistic Regression,default,0.5,0.898,0.92,0.908,0.914,0.933,69,7,6,46
+Logistic Regression,selected,0.32,0.898,0.96,0.878,0.917,0.933,72,10,3,43
+Linear SVM,default,0.0,0.883,0.907,0.895,0.901,0.936,68,8,7,45
+Linear SVM,selected,-0.222,0.898,0.96,0.878,0.917,0.936,72,10,3,43

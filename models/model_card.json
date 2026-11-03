@@ -1,0 +1,24 @@
+{
+ "title": "Explainable ML for SMS Scam Detection (Kenyan mobile-money context)",
+ "model": "Logistic Regression",
+ "features": "TF-IDF word unigrams + 17 handcrafted features",
+ "trained_on": 643,
+ "held_out_test": {
+  "accuracy": 0.898,
+  "recall": 0.96,
+  "precision": 0.878,
+  "f1": 0.917,
+  "roc_auc": 0.933
+ },
+ "threshold": 0.3203301862375496,
+ "threshold_rule": "highest threshold with >=95% out-of-fold scam recall",
+ "intended_use": "Educational/research prototype: flag possibly suspicious SMS for human review.",
+ "not_for": "Automatic blocking; legal or financial decisions; non-Kenyan or non-SMS contexts.",
+ "caveats": [
+  "Labels are annotations, not verified truth",
+  "643 unique messages",
+  "Class mix is not real-world prevalence",
+  "Genuine M-Pesa receipts may be flagged",
+  "Link-free social-engineering scams may be missed"
+ ]
+}
