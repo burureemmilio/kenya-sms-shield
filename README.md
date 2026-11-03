@@ -1,16 +1,25 @@
 # KenyaSMS Shield 🇰🇪
+
 ### An Explainable Machine Learning System for SMS Scam Detection and Risk Classification in Kenya
 
-KenyaSMS Shield is a machine learning-powered SMS security system designed to identify potentially fraudulent text messages and classify them according to their level of risk.
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit-red?logo=streamlit)](https://kenya-sms-shield.streamlit.app/)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)](https://www.python.org/)
+[![Scikit-learn](https://img.shields.io/badge/Machine%20Learning-Scikit--learn-orange?logo=scikitlearn)](https://scikit-learn.org/)
+[![Streamlit](https://img.shields.io/badge/Deployment-Streamlit-red?logo=streamlit)](https://streamlit.io/)
+
+**KenyaSMS Shield** is a machine learning-powered SMS security system designed to identify potentially fraudulent text messages and classify them according to their level of risk.
 
 The project focuses on SMS scams relevant to the Kenyan context, including messages involving M-Pesa, fraudulent financial transactions, impersonation, suspicious links, requests for sensitive information, and social engineering.
 
-It combines Natural Language Processing (NLP), traditional machine learning, feature engineering, and explainability techniques to provide a structured approach to SMS scam detection.
+It combines Natural Language Processing (NLP), traditional machine learning, feature engineering, and explainable AI to provide a structured approach to SMS scam detection.
+
+**Try the live application:** [KenyaSMS Shield](https://kenya-sms-shield.streamlit.app/)
 
 ---
 
 ## Table of Contents
 
+- [Live Demo](#live-demo)
 - [Project Overview](#project-overview)
 - [Problem Statement](#problem-statement)
 - [Project Objectives](#project-objectives)
@@ -37,6 +46,18 @@ It combines Natural Language Processing (NLP), traditional machine learning, fea
 
 ---
 
+## Live Demo
+
+KenyaSMS Shield is deployed and publicly accessible through **Streamlit Community Cloud**.
+
+<https://kenya-sms-shield.streamlit.app/>
+
+You can access the application directly from your browser without installing Python, downloading the project, or configuring a local development environment.
+
+The application allows users to submit SMS messages and receive machine learning-based risk assessments.
+
+---
+
 ## Project Overview
 
 SMS-based fraud is a growing concern as scammers increasingly use text messages to impersonate financial institutions, mobile money services, businesses, and trusted individuals.
@@ -48,11 +69,11 @@ KenyaSMS Shield explores how machine learning and natural language processing ca
 Unlike a simple spam-versus-ham classifier, the system uses a two-stage classification architecture:
 
 1. **Binary classification:** Determines whether a message is likely to be legitimate or potentially fraudulent.
-2. **Risk classification:** Assigns suspicious messages to different levels of risk.
+2. **Risk classification:** Assigns messages to different levels of risk.
 
 The system also incorporates Kenya-specific linguistic and structural indicators to help identify patterns commonly associated with local SMS scams.
 
-The project includes a Streamlit application, a trained model bundle, evaluation reports, Jupyter notebooks, and an API implementation.
+The project includes a trained machine learning model, an interactive Streamlit application, evaluation reports, Jupyter notebooks, and an API implementation.
 
 ## Problem Statement
 
@@ -88,9 +109,10 @@ The main objectives are to:
 - Model evaluation using precision, recall, F1-score, and ROC-AUC.
 - Synthetic legitimate-message stress testing.
 - Model explainability using SHAP.
-- Interactive Streamlit interface.
+- Interactive Streamlit application.
 - FastAPI implementation.
 - Reusable model bundle for inference.
+- Publicly accessible web deployment.
 
 ## System Architecture
 
@@ -115,39 +137,39 @@ The second-stage model provides additional risk information rather than relying 
 ### Prediction Workflow
 
 ```text
-             Incoming SMS
-                  |
-                  v
-          Text Preprocessing
-                  |
-                  v
-        Feature Extraction
-                  |
-       +----------+----------+
-       |          |          |
-       v          v          v
-     Word       Character   Handcrafted
-     TF-IDF     TF-IDF      Features
-       |          |          |
-       +----------+----------+
-                  |
-                  v
-          Feature Combination
-                  |
-                  v
-         Binary Classification
-                  |
-                  v
-          Risk Assessment
-                  |
-                  v
-         Severity Classification
-                  |
-                  v
-          Final Risk Category
-                  |
-                  v
-          User-Facing Result
+                 Incoming SMS
+                      |
+                      v
+              Text Preprocessing
+                      |
+                      v
+               Feature Extraction
+                      |
+          +-----------+-----------+
+          |           |           |
+          v           v           v
+        Word       Character   Handcrafted
+        TF-IDF     TF-IDF      Features
+          |           |           |
+          +-----------+-----------+
+                      |
+                      v
+              Feature Combination
+                      |
+                      v
+             Binary Classification
+                      |
+                      v
+               Risk Assessment
+                      |
+                      v
+             Severity Classification
+                      |
+                      v
+               Final Risk Category
+                      |
+                      v
+               User-Facing Result
 ```
 
 ## Risk Classification
@@ -193,7 +215,7 @@ The original held-out test set contained 128 messages.
 
 Synthetic legitimate messages were also incorporated into model development and used for an additional false-alarm stress test.
 
-Importantly, the synthetic holdout set was kept separate from model fitting.
+The synthetic holdout set was kept separate from model fitting.
 
 Synthetic data is not a substitute for independent real-world validation, and its results should be interpreted accordingly.
 
@@ -264,8 +286,6 @@ These features provide additional context beyond conventional text vectorisation
 
 The three feature families are combined using Scikit-learn's `FeatureUnion`.
 
-The configured transformer weights are:
-
 | Feature family | Weight |
 |---|---:|
 | Word TF-IDF | 1.0 |
@@ -297,7 +317,7 @@ The choice was informed by several considerations:
 
 1. It works effectively with sparse TF-IDF representations.
 2. It provides a strong and interpretable baseline for text classification.
-3. It supports efficient inference.
+3. It supports efficient training and inference.
 4. Its linear structure makes coefficient-based explanations possible.
 5. It can handle high-dimensional feature spaces.
 
@@ -335,7 +355,7 @@ The system was evaluated using the original held-out test set.
 | SAFE | 0.8868 | 0.8868 | 0.8868 | 53 |
 | SUSPICIOUS | 0.8667 | 0.8125 | 0.8387 | 16 |
 | HIGH-RISK SCAM | 0.8833 | 0.8983 | 0.8908 | 59 |
-| **Macro Average** | — | — | **0.8721** | **128** |
+| **Macro Average F1** | — | — | **0.8721** | **128** |
 
 ### Synthetic Legitimate-Message Stress Test
 
@@ -376,11 +396,13 @@ SHAP (SHapley Additive exPlanations) is used to investigate feature contribution
 The explainability analysis covers:
 
 **Global explanations**
+
 - Identifying influential features across multiple messages.
 - Comparing feature contributions.
 - Investigating patterns associated with different risk categories.
 
 **Local explanations**
+
 - Examining individual SMS predictions.
 - Identifying features that push a prediction towards or away from a class.
 - Comparing explanations for legitimate and suspicious messages.
@@ -402,7 +424,9 @@ SHAP explanations describe model behaviour; they do not establish that a message
 
 ## Application Interface
 
-The project includes a Streamlit application that allows users to interact with the trained model.
+KenyaSMS Shield includes an interactive web application built with Streamlit and deployed using Streamlit Community Cloud.
+
+**Live application:** [https://kenya-sms-shield.streamlit.app/](https://kenya-sms-shield.streamlit.app/)
 
 Users can:
 
@@ -412,7 +436,11 @@ Users can:
 4. Review the system's risk assessment.
 5. Access interpretation and safety guidance.
 
-The application uses the trained model bundle, so retraining is not required for normal use.
+The application uses the trained machine learning model to analyse submitted messages and return predictions through an interactive interface.
+
+The deployed application makes the system accessible without requiring users to install Python or configure a local development environment.
+
+For developers who want to run the application locally, follow the installation instructions below.
 
 ## Technology Stack
 
@@ -501,7 +529,7 @@ cd kenya-sms-shield
 
 ### 3. Create a Virtual Environment
 
-Windows:
+**Windows:**
 
 ```bash
 python -m venv .venv
@@ -513,7 +541,7 @@ Activate it:
 .venv\Scripts\activate
 ```
 
-macOS/Linux:
+**macOS/Linux:**
 
 ```bash
 python3 -m venv .venv
